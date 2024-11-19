@@ -19,7 +19,13 @@
 
 
 from sklearn.datasets import load_iris
-
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
+from mpl_toolkits import mplot3d
+from sklearn.linear_model import Perceptron
+from sklearn.neural_network import MLPClassifier
 
 # In[2]:
 
@@ -32,19 +38,18 @@ iris_dataset = load_iris()
 
 
 # Visualizamos las etiquetas del conjunto de datos
-iris_dataset.target_names
+# iris_dataset.target_names
 
 
 # In[4]:
 
 
 # Leemos el conjunto de datos con la libreria Pandas
-import pandas as pd
-import numpy as np
+
 
 df = pd.DataFrame(np.c_[iris_dataset['data'], iris_dataset['target']], 
                   columns= iris_dataset['feature_names'] + ['target'])
-df
+# df
 
 
 # ## 2. Visualización del conjunto de datos
@@ -53,7 +58,6 @@ df
 
 
 # Representacion grafica de dos dimensiones del conjunto de datos
-import matplotlib.pyplot as plt
 
 fig = plt.figure(figsize=(10, 7))
 
@@ -74,8 +78,6 @@ plt.show()
 
 
 # Representacion grafica de tres dimensiones del conjunto de datos
-import matplotlib.pyplot as plt
-from mpl_toolkits import mplot3d
 
 fig = plt.figure(figsize=(10, 7))
 ax = plt.axes(projection="3d")
@@ -100,8 +102,6 @@ plt.show()
 
 
 # Representacion grafica de tres dimensiones del conjunto de datos
-import matplotlib.pyplot as plt
-from mpl_toolkits import mplot3d
 
 fig = plt.figure(figsize=(10, 7))
 ax = plt.axes(projection="3d")
@@ -132,7 +132,7 @@ plt.show()
 
 # Reducimos el conjunto de datos para entrenar el algoritmo y visualizar el resultado
 df_reduced = df[["petal length (cm)", "petal width (cm)", "target"]]
-df_reduced
+# df_reduced
 
 
 # In[9]:
@@ -156,7 +156,7 @@ plt.show()
 # In[11]:
 
 
-from sklearn.linear_model import Perceptron
+# from sklearn.linear_model import Perceptron
 
 clf = Perceptron(max_iter=1000, random_state=40)
 clf.fit(X_df, y_df)
@@ -166,7 +166,7 @@ clf.fit(X_df, y_df)
 
 
 # Representacion grafica del limite de decision
-import numpy as np
+# import numpy as np
 
 X = X_df.values
 
@@ -200,7 +200,7 @@ plt.show()
 # In[13]:
 
 
-from sklearn.neural_network import MLPClassifier
+# from sklearn.neural_network import MLPClassifier
 
 clf = MLPClassifier()
 clf.fit(X_df, y_df)
@@ -210,27 +210,27 @@ clf.fit(X_df, y_df)
 
 
 # Número de capas del perceptrón multicapa|
-clf.n_layers_
+# clf.n_layers_
 
 
 # In[15]:
 
 
-clf.hidden_layer_sizes
+# clf.hidden_layer_sizes
 
 
 # In[16]:
 
 
 # Número de outputs del perceptrón multicapa
-clf.n_outputs_
+# clf.n_outputs_
 
 
 # In[23]:
 
 
 # Número de parámetros que forman el modelo
-clf.coefs_[1].shape
+# clf.coefs_[1].shape
 
 
 # In[ ]:
@@ -244,20 +244,20 @@ clf.coefs_[1].shape
 # In[30]:
 
 
-clf.intercepts_[1]
+# clf.intercepts_[1]
 
 
 # In[19]:
 
 
-X_df
+# X_df
 
 
 # In[20]:
 
 
 # Representacion grafica del limite de decision
-import numpy as np
+# import numpy as np
 
 X = X_df.values
 
