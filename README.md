@@ -1,6 +1,8 @@
 # MultiLayerPerceptron
 Profesor Santiago Hernández
+
 Experto en Ciberseguridad e Inteligencia Artificial
+
 https://ibmcsr.udemy.com/user/shramos/
 
 
